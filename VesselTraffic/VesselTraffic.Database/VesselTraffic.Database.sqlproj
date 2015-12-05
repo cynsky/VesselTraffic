@@ -62,10 +62,14 @@
     <Folder Include="Properties" />
     <Folder Include="Storage\" />
     <Folder Include="Security\" />
+    <Folder Include="ETL" />
+    <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Storage\USERDATA.sql" />
     <Build Include="Security\dim.sql" />
     <Build Include="Security\etl.sql" />
+    <Build Include="ETL\dim.TimeInterval.ETL.sql" />
+    <Build Include="Tables\dim.TimeInterval.sql" />
   </ItemGroup>
 </Project>
