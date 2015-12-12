@@ -1,0 +1,9 @@
+C:\Source\Repos\VesselTraffic\VesselTraffic\VesselTraffic.Database\bin\Debug\VesselTraffic.Database.dacpac
+C:\Source\Repos\VesselTraffic\VesselTraffic\VesselTraffic.Database\obj\Debug\Model.xml
+C:\Source\Repos\VesselTraffic\VesselTraffic\VesselTraffic.Database\obj\Debug\refactor.xml
+C:\Source\Repos\VesselTraffic\VesselTraffic\VesselTraffic.Database\obj\Debug\postdeploy.sql
+C:\Source\Repos\VesselTraffic\VesselTraffic\VesselTraffic.Database\obj\Debug\predeploy.sql
+C:\Source\Repos\VesselTraffic\VesselTraffic\VesselTraffic.Database\obj\Debug\VesselTraffic.Database.dll
+C:\Source\Repos\VesselTraffic\VesselTraffic\VesselTraffic.Database\obj\Debug\VesselTraffic.Database.pdb
+C:\Source\Repos\VesselTraffic\VesselTraffic\VesselTraffic.Database\bin\Debug\VesselTraffic.Database.dll
+C:\Source\Repos\VesselTraffic\VesselTraffic\VesselTraffic.Database\bin\Debug\VesselTraffic.Database.pdb

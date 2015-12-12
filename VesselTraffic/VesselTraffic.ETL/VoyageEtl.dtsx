@@ -1,0 +1,1109 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/5/2015 6:45:04 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="IN_RAINBOWS"
+  DTS:CreatorName="IN_RAINBOWS\Michael"
+  DTS:DTSID="{695FCDCB-F627-49C5-9838-B1D48712BAA9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.800.111"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="VoyageEtl"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{23DFA0D4-7828-4DB1-AA47-4C9AB2928E38}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV_Voyage]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{256DE014-CBE4-4B96-A444-CA4FD92FBB98}"
+      DTS:ObjectName="CSV_Voyage">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\GeoData\GreatLakes\VesselTrafficData\CSV\zone16_2013_12_voyage.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="VoyageID"
+              DTS:DTSID="{B48841CF-C690-460F-BE6D-C60CCBF9618E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="32"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Destination"
+              DTS:DTSID="{700783AD-C749-4198-94C2-5EB44DEE7BD4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cargo"
+              DTS:DTSID="{F150528D-059C-41BA-A2FD-F5EE2B6DDAB3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Draught"
+              DTS:DTSID="{75F41CA2-0E56-4F98-A17C-30306D194AD6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ETA"
+              DTS:DTSID="{C0450BE0-0241-4369-9385-53C3ED3CF66B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StartTime"
+              DTS:DTSID="{BA2A604A-8F0F-4960-B44B-B7AAAECAAB7E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EndTime"
+              DTS:DTSID="{DD0551EE-DC69-4056-ADD8-65C76B299252}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MMSI"
+              DTS:DTSID="{39312DCF-452C-499B-A61C-F43012F83E8A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E74CAD73-DBE4-423E-9F25-99D957C4BA03}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Destination Load"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6E1AFB27-684E-4DB1-B5DB-EB309E08EAE9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Destination Load"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Destination Load\Destination Dimension Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination Dimension Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dim].[Destination]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Destination Load\Destination Dimension Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{5557CB4D-315E-49BE-9A07-1619814197C5}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDB_VesselTraffic]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Destination Load\Destination Dimension Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Destination Load\Destination Dimension Destination.Inputs[OLE DB Destination Input].Columns[Destination]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="Destination"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Destination Load\Destination Dimension Destination.Inputs[OLE DB Destination Input].ExternalColumns[Destination]"
+                      lineageId="Package\Destination Load\Sort Destination.Outputs[Sort Output].Columns[Destination]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Destination Load\Destination Dimension Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      dataType="i2"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Destination Load\Destination Dimension Destination.Inputs[OLE DB Destination Input].ExternalColumns[Destination]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="Destination" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Destination Load\Destination Dimension Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Destination Load\Destination Dimension Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Destination Load\Destination Dimension Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Destination Load\Destination Dimension Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Destination Load\Destination Dimension Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Destination Load\Destination Dimension Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Destination Load\Fuzzy Grouping"
+              componentClassID="Microsoft.FuzzyGrouping"
+              contactInfo="Fuzzy Grouping;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Identifies potential duplicate rows and helps standardize the data by selecting canonical replacements. For example, reduce the occurrences of typos in a 'company name' column by referencing an approved list of company names."
+              name="Fuzzy Grouping"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Single"
+                  description="Specifies the minimum similarity threshold, expressed as a value between 0 and 1."
+                  name="MinSimilarity">0.8</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the white-space and punctuation characters used to separate strings into multiple words."
+                  name="Delimiters"> 	
+,.;:-"'&amp;/\@!?()&lt;&gt;[]{}|#*^%</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the maximum amount of memory (MB) that transform should use.  A value of 0 will enable dynamic memory usage based upon requirements and available system memory."
+                  expressionType="Notify"
+                  name="MaxMemoryUsage" />
+                <property
+                  dataType="System.Boolean"
+                  description="If true, each input record will be directly compared against EVERY other input record.  This may produce slightly better results, but will be extremely slow unless the number of input records is very small.  This option is primarily intended for debugging purposes and should be used with care."
+                  name="Exhaustive">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Destination Load\Fuzzy Grouping.Connections[OleDbConnection]"
+                  connectionManagerID="{5557CB4D-315E-49BE-9A07-1619814197C5}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDB_VesselTraffic]"
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Destination Load\Fuzzy Grouping.Inputs[Fuzzy Grouping Input]"
+                  name="Fuzzy Grouping Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Destination Load\Fuzzy Grouping.Inputs[Fuzzy Grouping Input].Columns[Destination]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="Destination"
+                      lineageId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Output].Columns[Destination]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether to use the column to determine if two records are similar."
+                          name="ToBeCleaned">true</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether rows must be exact matches or fuzzy matches to be considered duplicates."
+                          name="ExactFuzzy"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the hint that causes similar rows that contain differing leading or trailing numeric values be less likely to be considered duplicates."
+                          name="LeadingTrailingNumeralsSignificant"
+                          typeConverter="tcNumeralsSignificant">0</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum similarity threshold, expressed as a value between 0 and 1."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies how string data in a column is compared."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Destination Load\Fuzzy Grouping.Outputs[Fuzzy Grouping Output]"
+                  name="Fuzzy Grouping Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Destination Load\Fuzzy Grouping.Outputs[Fuzzy Grouping Output].Columns[_key_in]"
+                      dataType="i4"
+                      lineageId="Package\Destination Load\Fuzzy Grouping.Outputs[Fuzzy Grouping Output].Columns[_key_in]"
+                      name="_key_in">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column type. The valid values are Canonical, ColumnSimilarity, KeyIn, KeyOut, PassThru, Similarity and Undefined."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column. The value must be a positive integer."
+                          name="InputId">#{Package\Destination Load\-1:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Destination Load\Fuzzy Grouping.Outputs[Fuzzy Grouping Output].Columns[_key_out]"
+                      dataType="i4"
+                      lineageId="Package\Destination Load\Fuzzy Grouping.Outputs[Fuzzy Grouping Output].Columns[_key_out]"
+                      name="_key_out">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column type. The valid values are Canonical, ColumnSimilarity, KeyIn, KeyOut, PassThru, Similarity and Undefined."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">2</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column. The value must be a positive integer."
+                          name="InputId">#{Package\Destination Load\-1:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Destination Load\Fuzzy Grouping.Outputs[Fuzzy Grouping Output].Columns[_score]"
+                      dataType="r4"
+                      lineageId="Package\Destination Load\Fuzzy Grouping.Outputs[Fuzzy Grouping Output].Columns[_score]"
+                      name="_score">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column type. The valid values are Canonical, ColumnSimilarity, KeyIn, KeyOut, PassThru, Similarity and Undefined."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">3</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column. The value must be a positive integer."
+                          name="InputId">#{Package\Destination Load\-1:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Destination Load\Fuzzy Grouping.Outputs[Fuzzy Grouping Output].Columns[Destination]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Destination Load\Fuzzy Grouping.Outputs[Fuzzy Grouping Output].Columns[Destination]"
+                      name="Destination">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column type. The valid values are Canonical, ColumnSimilarity, KeyIn, KeyOut, PassThru, Similarity and Undefined."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">5</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column. The value must be a positive integer."
+                          name="InputId">#{Package\Destination Load\Voyage Source.Outputs[Flat File Source Output].Columns[Destination]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Destination Load\Fuzzy Grouping.Outputs[Fuzzy Grouping Output].Columns[Destination_clean]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Destination Load\Fuzzy Grouping.Outputs[Fuzzy Grouping Output].Columns[Destination_clean]"
+                      name="Destination_clean">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column type. The valid values are Canonical, ColumnSimilarity, KeyIn, KeyOut, PassThru, Similarity and Undefined."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">6</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column. The value must be a positive integer."
+                          name="InputId">#{Package\Destination Load\Voyage Source.Outputs[Flat File Source Output].Columns[Destination]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Destination Load\Lookup Destination"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Destination"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dim].[Destination]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dim].[Destination]) [refTable]
+where [refTable].[Destination] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Id" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Destination" dataType="DT_STR" length="64" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Destination Load\Sort Destination.Outputs[Sort Output].Columns[Destination]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Destination Load\Lookup Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{5557CB4D-315E-49BE-9A07-1619814197C5}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDB_VesselTraffic]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Destination Load\Lookup Destination.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Destination Load\Lookup Destination.Inputs[Lookup Input].Columns[Destination]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="Destination"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\Destination Load\Sort Destination.Outputs[Sort Output].Columns[Destination]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Destination</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Destination Load\Lookup Destination.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Destination Load\Lookup Destination.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Destination Load\Lookup Destination.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Destination Load\Lookup Destination.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Destination Load\Lookup Destination.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Destination Load\Lookup Destination.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Destination Load\Lookup Destination.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Destination Load\Lookup Destination.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Destination Load\Lookup Destination.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Destination Load\Lookup Destination.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Destination Load\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::Variable</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Destination Load\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Destination Load\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Destination Load\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Destination Load\Sort Destination"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Destination Load\Sort Destination.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Destination Load\Sort Destination.Inputs[Sort Input].Columns[_key_out]"
+                      cachedDataType="i4"
+                      cachedName="_key_out"
+                      lineageId="Package\Destination Load\Fuzzy Grouping.Outputs[Fuzzy Grouping Output].Columns[_key_out]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Destination Load\Sort Destination.Inputs[Sort Input].Columns[Destination]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="Destination"
+                      lineageId="Package\Destination Load\Fuzzy Grouping.Outputs[Fuzzy Grouping Output].Columns[Destination]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Destination Load\Sort Destination.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Destination Load\Sort Destination.Outputs[Sort Output].Columns[_key_out]"
+                      dataType="i4"
+                      lineageId="Package\Destination Load\Sort Destination.Outputs[Sort Output].Columns[_key_out]"
+                      name="_key_out"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Destination Load\Fuzzy Grouping.Outputs[Fuzzy Grouping Output].Columns[_key_out]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Destination Load\Sort Destination.Outputs[Sort Output].Columns[Destination]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Destination Load\Sort Destination.Outputs[Sort Output].Columns[Destination]"
+                      name="Destination"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Destination Load\Fuzzy Grouping.Outputs[Fuzzy Grouping Output].Columns[Destination]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Destination Load\Voyage Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Voyage Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Destination Load\Voyage Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CSV_Voyage]"
+                  connectionManagerRefId="Package.ConnectionManagers[CSV_Voyage]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Output].Columns[Destination]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Output].ExternalColumns[Destination]"
+                      length="32"
+                      lineageId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Output].Columns[Destination]"
+                      name="Destination"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Output].ExternalColumns[VoyageID]"
+                      dataType="i2"
+                      name="VoyageID" />
+                    <externalMetadataColumn
+                      refId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Output].ExternalColumns[Destination]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="Destination" />
+                    <externalMetadataColumn
+                      refId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Output].ExternalColumns[Cargo]"
+                      dataType="i4"
+                      name="Cargo" />
+                    <externalMetadataColumn
+                      refId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Output].ExternalColumns[Draught]"
+                      dataType="i2"
+                      name="Draught" />
+                    <externalMetadataColumn
+                      refId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Output].ExternalColumns[ETA]"
+                      dataType="dbTimeStamp"
+                      name="ETA" />
+                    <externalMetadataColumn
+                      refId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Output].ExternalColumns[StartTime]"
+                      dataType="dbTimeStamp"
+                      name="StartTime" />
+                    <externalMetadataColumn
+                      refId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Output].ExternalColumns[EndTime]"
+                      dataType="dbTimeStamp"
+                      name="EndTime" />
+                    <externalMetadataColumn
+                      refId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Output].ExternalColumns[MMSI]"
+                      dataType="i4"
+                      name="MMSI" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Destination Load.Paths[Flat File Source Output]"
+              endId="Package\Destination Load\Row Count.Inputs[Row Count Input 1]"
+              name="Flat File Source Output"
+              startId="Package\Destination Load\Voyage Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Destination Load.Paths[Fuzzy Grouping Output]"
+              endId="Package\Destination Load\Sort Destination.Inputs[Sort Input]"
+              name="Fuzzy Grouping Output"
+              startId="Package\Destination Load\Fuzzy Grouping.Outputs[Fuzzy Grouping Output]" />
+            <path
+              refId="Package\Destination Load.Paths[Lookup No Match Output]"
+              endId="Package\Destination Load\Destination Dimension Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Destination Load\Lookup Destination.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Destination Load.Paths[Row Count Output 1]"
+              endId="Package\Destination Load\Fuzzy Grouping.Inputs[Fuzzy Grouping Input]"
+              name="Row Count Output 1"
+              startId="Package\Destination Load\Row Count.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Destination Load.Paths[Sort Output]"
+              endId="Package\Destination Load\Lookup Destination.Inputs[Lookup Input]"
+              name="Sort Output"
+              startId="Package\Destination Load\Sort Destination.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Destination Load"
+          TopLeft="155,67" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Destination Load">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="211,42"
+          Id="Package\Destination Load\Voyage Source"
+          TopLeft="194,91" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Destination Load\Fuzzy Grouping"
+          TopLeft="183,298.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\Destination Load\Sort Destination"
+          TopLeft="184,404.5" />
+        <EdgeLayout
+          Id="Package\Destination Load.Paths[Fuzzy Grouping Output]"
+          TopLeft="259,340.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="30.5,64"
+              Start="0,0"
+              End="30.5,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28"
+                    Point2="0,32"
+                    Point3="4,32" />
+                  <mssgle:LineSegment
+                    End="26.5,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.5,32"
+                    Point2="30.5,32"
+                    Point3="30.5,36" />
+                  <mssgle:LineSegment
+                    End="30.5,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="241,42"
+          Id="Package\Destination Load\Destination Dimension Destination"
+          TopLeft="175,629.5" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Destination Load\Lookup Destination"
+          TopLeft="199,508.5" />
+        <EdgeLayout
+          Id="Package\Destination Load.Paths[Sort Output]"
+          TopLeft="286.5,446.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Destination Load.Paths[Lookup No Match Output]"
+          TopLeft="283.5,550.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12,79"
+              Start="0,0"
+              End="12,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.5"
+                    Point2="0,39.5"
+                    Point3="4,39.5" />
+                  <mssgle:LineSegment
+                    End="8,39.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8,39.5"
+                    Point2="12,39.5"
+                    Point3="12,43.5" />
+                  <mssgle:LineSegment
+                    End="12,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-49.80638671875,44.5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Destination Load\Row Count"
+          TopLeft="224,195.5" />
+        <EdgeLayout
+          Id="Package\Destination Load.Paths[Flat File Source Output]"
+          TopLeft="299.5,133">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.5,62.5"
+              Start="0,0"
+              End="-10.5,55">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.25"
+                    Point2="0,31.25"
+                    Point3="-4,31.25" />
+                  <mssgle:LineSegment
+                    End="-6.5,31.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.5,31.25"
+                    Point2="-10.5,31.25"
+                    Point3="-10.5,35.25" />
+                  <mssgle:LineSegment
+                    End="-10.5,55" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Destination Load.Paths[Row Count Output 1]"
+          TopLeft="289,237.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-30,61"
+              Start="0,0"
+              End="-30,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.5"
+                    Point2="0,30.5"
+                    Point3="-4,30.5" />
+                  <mssgle:LineSegment
+                    End="-26,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-26,30.5"
+                    Point2="-30,30.5"
+                    Point3="-30,34.5" />
+                  <mssgle:LineSegment
+                    End="-30,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Destination Load\Destination Dimension Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Destination Load\Lookup Destination">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[Destination]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

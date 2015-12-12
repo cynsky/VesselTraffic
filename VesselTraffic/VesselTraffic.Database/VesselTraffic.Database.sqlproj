@@ -64,12 +64,23 @@
     <Folder Include="Security\" />
     <Folder Include="ETL" />
     <Folder Include="Tables" />
+    <Folder Include="Views" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Storage\USERDATA.sql" />
     <Build Include="Security\dim.sql" />
     <Build Include="Security\etl.sql" />
-    <Build Include="ETL\dim.TimeInterval.ETL.sql" />
     <Build Include="Tables\dim.TimeInterval.sql" />
+    <Build Include="Tables\dim.DateInterval.sql" />
+    <Build Include="Tables\dim.ShipType.sql" />
+    <Build Include="Tables\dim.Vessel.sql" />
+    <Build Include="Tables\dim.VesselSizeProfile.sql" />
+    <Build Include="ETL\dim.DateInterval.ETL.sql" />
+    <Build Include="ETL\dim.TimeInterval.ETL.sql" />
+    <Build Include="Views\dim.VesselView.sql" />
+    <Build Include="Tables\dim.Destination.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="VesselTraffic.Database.refactorlog" />
   </ItemGroup>
 </Project>

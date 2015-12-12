@@ -21,7 +21,7 @@
       <Dimensions>
         <Dimension>
           <ID>TimeInterval_c4754db1-4bf4-4016-b762-7d582ce09521</ID>
-          <Name>TimeInterval</Name>
+          <Name>Times</Name>
           <Annotations>
             <Annotation>
               <Name>IsQueryEditorUsed</Name>
@@ -131,6 +131,7 @@
                 </Source>
               </NameColumn>
               <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
             </Attribute>
             <Attribute>
               <Annotations>
@@ -166,6 +167,7 @@
                 </Source>
               </NameColumn>
               <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
               <ddl300_300:FormatString>General Date</ddl300_300:FormatString>
             </Attribute>
             <Attribute>
@@ -202,6 +204,7 @@
                 </Source>
               </NameColumn>
               <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
             </Attribute>
             <Attribute>
               <Annotations>
@@ -237,8 +240,995 @@
                 </Source>
               </NameColumn>
               <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
             </Attribute>
           </Attributes>
+          <Hierarchies>
+            <Hierarchy>
+              <ID>Time Intervals</ID>
+              <Name>Time Intervals</Name>
+              <Levels>
+                <Level>
+                  <ID>Hours</ID>
+                  <Name>Hours</Name>
+                  <SourceAttributeID>HourInterval</SourceAttributeID>
+                </Level>
+                <Level>
+                  <ID>Minutes</ID>
+                  <Name>Minutes</Name>
+                  <SourceAttributeID>MinuteInterval</SourceAttributeID>
+                </Level>
+              </Levels>
+            </Hierarchy>
+          </Hierarchies>
+          <ProactiveCaching>
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" />
+          </ProactiveCaching>
+        </Dimension>
+        <Dimension>
+          <ID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</ID>
+          <Name>Dates</Name>
+          <Annotations>
+            <Annotation>
+              <Name>IsQueryEditorUsed</Name>
+              <Value>False</Value>
+            </Annotation>
+            <Annotation>
+              <Name>QueryEditorSerialization</Name>
+            </Annotation>
+            <Annotation>
+              <Name>TableWidgetSerialization</Name>
+            </Annotation>
+            <Annotation>
+              <Name>DataMarketWebBaseUrl</Name>
+            </Annotation>
+            <Annotation>
+              <Name>DataMarketWebQueryUrl</Name>
+            </Annotation>
+          </Annotations>
+          <Source xsi:type="DataSourceViewBinding">
+            <DataSourceViewID>Sandbox</DataSourceViewID>
+          </Source>
+          <UnknownMember valuens="ddl200_200">AutomaticNull</UnknownMember>
+          <ErrorConfiguration>
+            <KeyNotFound>IgnoreError</KeyNotFound>
+            <KeyDuplicate>ReportAndStop</KeyDuplicate>
+            <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+          </ErrorConfiguration>
+          <StorageMode valuens="ddl200_200">InMemory</StorageMode>
+          <Language>1033</Language>
+          <UnknownMemberName>Unknown</UnknownMemberName>
+          <Attributes>
+            <Attribute>
+              <ID>__XL_RowNumber</ID>
+              <Name>__XL_RowNumber</Name>
+              <Type valuens="ddl200_200">RowNumber</Type>
+              <Usage>Key</Usage>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Integer</DataType>
+                  <DataSize>4</DataSize>
+                  <NullProcessing>Error</NullProcessing>
+                  <Source xsi:type="ddl200_200:RowNumberBinding" />
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>4</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <Source xsi:type="ddl200_200:RowNumberBinding" />
+              </NameColumn>
+              <AttributeRelationships>
+                <AttributeRelationship>
+                  <AttributeID>Id</AttributeID>
+                  <OverrideBehavior>None</OverrideBehavior>
+                  <Name>Id_</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>DateKey</AttributeID>
+                  <OverrideBehavior>None</OverrideBehavior>
+                  <Name>DateKey</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>CalendarYear</AttributeID>
+                  <OverrideBehavior>None</OverrideBehavior>
+                  <Name>CalendarYear</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>CalendarQuarter</AttributeID>
+                  <OverrideBehavior>None</OverrideBehavior>
+                  <Name>CalendarQuarter</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>CalendarMonth</AttributeID>
+                  <OverrideBehavior>None</OverrideBehavior>
+                  <Name>CalendarMonth</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>CalendarDay</AttributeID>
+                  <OverrideBehavior>None</OverrideBehavior>
+                  <Name>CalendarDay</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>CalendarMonthName</AttributeID>
+                  <OverrideBehavior>None</OverrideBehavior>
+                  <Name>CalendarMonthName</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>CalendarDayName</AttributeID>
+                  <OverrideBehavior>None</OverrideBehavior>
+                  <Name>CalendarDayName</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>ISOWeek</AttributeID>
+                  <OverrideBehavior>None</OverrideBehavior>
+                  <Name>ISOWeek</Name>
+                </AttributeRelationship>
+              </AttributeRelationships>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <Annotations>
+                <Annotation>
+                  <Name>Format</Name>
+                  <Value>
+                    <Format Format="General" xmlns="" />
+                  </Value>
+                </Annotation>
+              </Annotations>
+              <ID>Id</ID>
+              <Name>Id</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>BigInt</DataType>
+                  <DataSize>-1</DataSize>
+                  <NullProcessing>Preserve</NullProcessing>
+                  <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                    <ColumnID>Id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>-1</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                  <ColumnID>Id</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <Annotations>
+                <Annotation>
+                  <Name>Format</Name>
+                  <Value>
+                    <Format Format="DateTimeGeneral" xmlns="" />
+                  </Value>
+                </Annotation>
+              </Annotations>
+              <ID>DateKey</ID>
+              <Name>DateKey</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Date</DataType>
+                  <DataSize>-1</DataSize>
+                  <NullProcessing>Preserve</NullProcessing>
+                  <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                    <ColumnID>DateKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>-1</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                  <ColumnID>DateKey</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+              <ddl300_300:FormatString>General Date</ddl300_300:FormatString>
+            </Attribute>
+            <Attribute>
+              <Annotations>
+                <Annotation>
+                  <Name>Format</Name>
+                  <Value>
+                    <Format Format="Text" xmlns="" />
+                  </Value>
+                </Annotation>
+              </Annotations>
+              <ID>CalendarYear</ID>
+              <Name>CalendarYear</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>32766</DataSize>
+                  <NullProcessing>Preserve</NullProcessing>
+                  <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                    <ColumnID>CalendarYear</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>32766</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                  <ColumnID>CalendarYear</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <Annotations>
+                <Annotation>
+                  <Name>Format</Name>
+                  <Value>
+                    <Format Format="Text" xmlns="" />
+                  </Value>
+                </Annotation>
+              </Annotations>
+              <ID>CalendarQuarter</ID>
+              <Name>CalendarQuarter</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>32766</DataSize>
+                  <NullProcessing>Preserve</NullProcessing>
+                  <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                    <ColumnID>CalendarQuarter</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>32766</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                  <ColumnID>CalendarQuarter</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <Annotations>
+                <Annotation>
+                  <Name>Format</Name>
+                  <Value>
+                    <Format Format="Text" xmlns="" />
+                  </Value>
+                </Annotation>
+              </Annotations>
+              <ID>CalendarMonth</ID>
+              <Name>CalendarMonth</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>32766</DataSize>
+                  <NullProcessing>Preserve</NullProcessing>
+                  <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                    <ColumnID>CalendarMonth</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>32766</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                  <ColumnID>CalendarMonth</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <Annotations>
+                <Annotation>
+                  <Name>Format</Name>
+                  <Value>
+                    <Format Format="Text" xmlns="" />
+                  </Value>
+                </Annotation>
+              </Annotations>
+              <ID>CalendarDay</ID>
+              <Name>CalendarDay</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>32766</DataSize>
+                  <NullProcessing>Preserve</NullProcessing>
+                  <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                    <ColumnID>CalendarDay</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>32766</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                  <ColumnID>CalendarDay</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <Annotations>
+                <Annotation>
+                  <Name>Format</Name>
+                  <Value>
+                    <Format Format="Text" xmlns="" />
+                  </Value>
+                </Annotation>
+              </Annotations>
+              <ID>CalendarMonthName</ID>
+              <Name>CalendarMonthName</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>32766</DataSize>
+                  <NullProcessing>Preserve</NullProcessing>
+                  <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                    <ColumnID>CalendarMonthName</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>32766</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                  <ColumnID>CalendarMonthName</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <Annotations>
+                <Annotation>
+                  <Name>Format</Name>
+                  <Value>
+                    <Format Format="Text" xmlns="" />
+                  </Value>
+                </Annotation>
+              </Annotations>
+              <ID>CalendarDayName</ID>
+              <Name>CalendarDayName</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>32766</DataSize>
+                  <NullProcessing>Preserve</NullProcessing>
+                  <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                    <ColumnID>CalendarDayName</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>32766</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                  <ColumnID>CalendarDayName</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <Annotations>
+                <Annotation>
+                  <Name>Format</Name>
+                  <Value>
+                    <Format Format="Text" xmlns="" />
+                  </Value>
+                </Annotation>
+              </Annotations>
+              <ID>ISOWeek</ID>
+              <Name>ISOWeek</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>32766</DataSize>
+                  <NullProcessing>Preserve</NullProcessing>
+                  <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                    <ColumnID>ISOWeek</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>32766</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                  <ColumnID>ISOWeek</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+          </Attributes>
+          <Hierarchies>
+            <Hierarchy>
+              <ID>Date Intervals</ID>
+              <Name>Date Intervals</Name>
+              <Levels>
+                <Level>
+                  <ID>Calendar Year</ID>
+                  <Name>Calendar Year</Name>
+                  <SourceAttributeID>CalendarYear</SourceAttributeID>
+                </Level>
+                <Level>
+                  <ID>Calendar Quarter</ID>
+                  <Name>Calendar Quarter</Name>
+                  <SourceAttributeID>CalendarQuarter</SourceAttributeID>
+                </Level>
+                <Level>
+                  <ID>Calendar Month</ID>
+                  <Name>Calendar Month</Name>
+                  <SourceAttributeID>CalendarMonthName</SourceAttributeID>
+                </Level>
+                <Level>
+                  <ID>Calendar Day</ID>
+                  <Name>Calendar Day</Name>
+                  <SourceAttributeID>CalendarDay</SourceAttributeID>
+                </Level>
+              </Levels>
+            </Hierarchy>
+          </Hierarchies>
+          <ProactiveCaching>
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" />
+          </ProactiveCaching>
+        </Dimension>
+        <Dimension>
+          <ID>ShipType_237284e5-7067-470e-ac3a-353253975aef</ID>
+          <Name>Ship Type</Name>
+          <Annotations>
+            <Annotation>
+              <Name>IsQueryEditorUsed</Name>
+              <Value>False</Value>
+            </Annotation>
+            <Annotation>
+              <Name>QueryEditorSerialization</Name>
+            </Annotation>
+            <Annotation>
+              <Name>TableWidgetSerialization</Name>
+            </Annotation>
+            <Annotation>
+              <Name>DataMarketWebBaseUrl</Name>
+            </Annotation>
+            <Annotation>
+              <Name>DataMarketWebQueryUrl</Name>
+            </Annotation>
+          </Annotations>
+          <Source xsi:type="DataSourceViewBinding">
+            <DataSourceViewID>Sandbox</DataSourceViewID>
+          </Source>
+          <UnknownMember valuens="ddl200_200">AutomaticNull</UnknownMember>
+          <ErrorConfiguration>
+            <KeyNotFound>IgnoreError</KeyNotFound>
+            <KeyDuplicate>ReportAndStop</KeyDuplicate>
+            <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+          </ErrorConfiguration>
+          <StorageMode valuens="ddl200_200">InMemory</StorageMode>
+          <Language>1033</Language>
+          <UnknownMemberName>Unknown</UnknownMemberName>
+          <Attributes>
+            <Attribute>
+              <ID>__XL_RowNumber</ID>
+              <Name>__XL_RowNumber</Name>
+              <Type valuens="ddl200_200">RowNumber</Type>
+              <Usage>Key</Usage>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Integer</DataType>
+                  <DataSize>4</DataSize>
+                  <NullProcessing>Error</NullProcessing>
+                  <Source xsi:type="ddl200_200:RowNumberBinding" />
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>4</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <Source xsi:type="ddl200_200:RowNumberBinding" />
+              </NameColumn>
+              <AttributeRelationships>
+                <AttributeRelationship>
+                  <AttributeID>Id</AttributeID>
+                  <OverrideBehavior>None</OverrideBehavior>
+                  <Name>Id_</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>ShipType</AttributeID>
+                  <OverrideBehavior>None</OverrideBehavior>
+                  <Name>ShipType</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>ShipTypeDetail</AttributeID>
+                  <OverrideBehavior>None</OverrideBehavior>
+                  <Name>ShipTypeDetail</Name>
+                </AttributeRelationship>
+              </AttributeRelationships>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <Annotations>
+                <Annotation>
+                  <Name>Format</Name>
+                  <Value>
+                    <Format Format="General" xmlns="" />
+                  </Value>
+                </Annotation>
+              </Annotations>
+              <ID>Id</ID>
+              <Name>Id</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>BigInt</DataType>
+                  <DataSize>-1</DataSize>
+                  <NullProcessing>Preserve</NullProcessing>
+                  <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>ShipType_237284e5-7067-470e-ac3a-353253975aef</TableID>
+                    <ColumnID>Id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>-1</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>ShipType_237284e5-7067-470e-ac3a-353253975aef</TableID>
+                  <ColumnID>Id</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <Annotations>
+                <Annotation>
+                  <Name>Format</Name>
+                  <Value>
+                    <Format Format="Text" xmlns="" />
+                  </Value>
+                </Annotation>
+              </Annotations>
+              <ID>ShipType</ID>
+              <Name>ShipType</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>32766</DataSize>
+                  <NullProcessing>Preserve</NullProcessing>
+                  <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>ShipType_237284e5-7067-470e-ac3a-353253975aef</TableID>
+                    <ColumnID>ShipType</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>32766</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>ShipType_237284e5-7067-470e-ac3a-353253975aef</TableID>
+                  <ColumnID>ShipType</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <Annotations>
+                <Annotation>
+                  <Name>Format</Name>
+                  <Value>
+                    <Format Format="Text" xmlns="" />
+                  </Value>
+                </Annotation>
+              </Annotations>
+              <ID>ShipTypeDetail</ID>
+              <Name>ShipTypeDetail</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>32766</DataSize>
+                  <NullProcessing>Preserve</NullProcessing>
+                  <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>ShipType_237284e5-7067-470e-ac3a-353253975aef</TableID>
+                    <ColumnID>ShipTypeDetail</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>32766</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>ShipType_237284e5-7067-470e-ac3a-353253975aef</TableID>
+                  <ColumnID>ShipTypeDetail</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+          </Attributes>
+          <Hierarchies>
+            <Hierarchy>
+              <ID>Ship Types</ID>
+              <Name>Ship Types</Name>
+              <Levels>
+                <Level>
+                  <ID>Ship Type</ID>
+                  <Name>Ship Type</Name>
+                  <SourceAttributeID>ShipType</SourceAttributeID>
+                </Level>
+                <Level>
+                  <ID>Ship Type Detail</ID>
+                  <Name>Ship Type Detail</Name>
+                  <SourceAttributeID>ShipTypeDetail</SourceAttributeID>
+                </Level>
+              </Levels>
+            </Hierarchy>
+          </Hierarchies>
+          <ProactiveCaching>
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" />
+          </ProactiveCaching>
+        </Dimension>
+        <Dimension>
+          <ID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</ID>
+          <Name>Vessels</Name>
+          <Annotations>
+            <Annotation>
+              <Name>IsQueryEditorUsed</Name>
+              <Value>False</Value>
+            </Annotation>
+            <Annotation>
+              <Name>QueryEditorSerialization</Name>
+            </Annotation>
+            <Annotation>
+              <Name>TableWidgetSerialization</Name>
+            </Annotation>
+            <Annotation>
+              <Name>DataMarketWebBaseUrl</Name>
+            </Annotation>
+            <Annotation>
+              <Name>DataMarketWebQueryUrl</Name>
+            </Annotation>
+          </Annotations>
+          <Source xsi:type="DataSourceViewBinding">
+            <DataSourceViewID>Sandbox</DataSourceViewID>
+          </Source>
+          <UnknownMember valuens="ddl200_200">AutomaticNull</UnknownMember>
+          <ErrorConfiguration>
+            <KeyNotFound>IgnoreError</KeyNotFound>
+            <KeyDuplicate>ReportAndStop</KeyDuplicate>
+            <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+          </ErrorConfiguration>
+          <StorageMode valuens="ddl200_200">InMemory</StorageMode>
+          <Language>1033</Language>
+          <UnknownMemberName>Unknown</UnknownMemberName>
+          <Attributes>
+            <Attribute>
+              <ID>__XL_RowNumber</ID>
+              <Name>__XL_RowNumber</Name>
+              <Type valuens="ddl200_200">RowNumber</Type>
+              <Usage>Key</Usage>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Integer</DataType>
+                  <DataSize>4</DataSize>
+                  <NullProcessing>Error</NullProcessing>
+                  <Source xsi:type="ddl200_200:RowNumberBinding" />
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>4</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <Source xsi:type="ddl200_200:RowNumberBinding" />
+              </NameColumn>
+              <AttributeRelationships>
+                <AttributeRelationship>
+                  <AttributeID>Id</AttributeID>
+                  <OverrideBehavior>None</OverrideBehavior>
+                  <Name>Id_</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>MMSI</AttributeID>
+                  <OverrideBehavior>None</OverrideBehavior>
+                  <Name>MMSI</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>ShipType</AttributeID>
+                  <OverrideBehavior>None</OverrideBehavior>
+                  <Name>ShipType</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>ShipTypeDetail</AttributeID>
+                  <OverrideBehavior>None</OverrideBehavior>
+                  <Name>ShipTypeDetail</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>VesselDimension</AttributeID>
+                  <OverrideBehavior>None</OverrideBehavior>
+                  <Name>VesselDimension</Name>
+                </AttributeRelationship>
+              </AttributeRelationships>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <Annotations>
+                <Annotation>
+                  <Name>Format</Name>
+                  <Value>
+                    <Format Format="General" xmlns="" />
+                  </Value>
+                </Annotation>
+              </Annotations>
+              <ID>Id</ID>
+              <Name>Id</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>BigInt</DataType>
+                  <DataSize>-1</DataSize>
+                  <NullProcessing>Preserve</NullProcessing>
+                  <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</TableID>
+                    <ColumnID>Id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>-1</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</TableID>
+                  <ColumnID>Id</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <Annotations>
+                <Annotation>
+                  <Name>Format</Name>
+                  <Value>
+                    <Format Format="Text" xmlns="" />
+                  </Value>
+                </Annotation>
+              </Annotations>
+              <ID>MMSI</ID>
+              <Name>MMSI</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>32766</DataSize>
+                  <NullProcessing>Preserve</NullProcessing>
+                  <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</TableID>
+                    <ColumnID>MMSI</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>32766</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</TableID>
+                  <ColumnID>MMSI</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <Annotations>
+                <Annotation>
+                  <Name>Format</Name>
+                  <Value>
+                    <Format Format="Text" xmlns="" />
+                  </Value>
+                </Annotation>
+              </Annotations>
+              <ID>ShipType</ID>
+              <Name>ShipType</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>32766</DataSize>
+                  <NullProcessing>Preserve</NullProcessing>
+                  <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</TableID>
+                    <ColumnID>ShipType</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>32766</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</TableID>
+                  <ColumnID>ShipType</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <Annotations>
+                <Annotation>
+                  <Name>Format</Name>
+                  <Value>
+                    <Format Format="Text" xmlns="" />
+                  </Value>
+                </Annotation>
+              </Annotations>
+              <ID>ShipTypeDetail</ID>
+              <Name>ShipTypeDetail</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>32766</DataSize>
+                  <NullProcessing>Preserve</NullProcessing>
+                  <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</TableID>
+                    <ColumnID>ShipTypeDetail</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>32766</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</TableID>
+                  <ColumnID>ShipTypeDetail</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <Annotations>
+                <Annotation>
+                  <Name>Format</Name>
+                  <Value>
+                    <Format Format="Text" xmlns="" />
+                  </Value>
+                </Annotation>
+              </Annotations>
+              <ID>VesselDimension</ID>
+              <Name>VesselDimension</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>32766</DataSize>
+                  <NullProcessing>Preserve</NullProcessing>
+                  <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</TableID>
+                    <ColumnID>VesselDimension</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>32766</DataSize>
+                <NullProcessing>ZeroOrBlank</NullProcessing>
+                <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</TableID>
+                  <ColumnID>VesselDimension</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+          </Attributes>
+          <Hierarchies>
+            <Hierarchy>
+              <ID>Vessel Types</ID>
+              <Name>Vessel Types</Name>
+              <Levels>
+                <Level>
+                  <ID>Ship Types</ID>
+                  <Name>Ship Types</Name>
+                  <SourceAttributeID>ShipType</SourceAttributeID>
+                </Level>
+                <Level>
+                  <ID>Ship Type Detail</ID>
+                  <Name>Ship Type Detail</Name>
+                  <SourceAttributeID>ShipTypeDetail</SourceAttributeID>
+                </Level>
+                <Level>
+                  <ID>MMSI</ID>
+                  <Name>MMSI</Name>
+                  <SourceAttributeID>MMSI</SourceAttributeID>
+                </Level>
+              </Levels>
+            </Hierarchy>
+          </Hierarchies>
           <ProactiveCaching>
             <SilenceInterval>-PT1S</SilenceInterval>
             <Latency>-PT1S</Latency>
@@ -262,7 +1252,7 @@
           <Dimensions>
             <Dimension>
               <ID>TimeInterval_c4754db1-4bf4-4016-b762-7d582ce09521</ID>
-              <Name>TimeInterval</Name>
+              <Name>Times</Name>
               <DimensionID>TimeInterval_c4754db1-4bf4-4016-b762-7d582ce09521</DimensionID>
               <Attributes>
                 <Attribute>
@@ -271,27 +1261,152 @@
                 </Attribute>
                 <Attribute>
                   <AttributeID>Id</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
                 </Attribute>
                 <Attribute>
                   <AttributeID>TimeKey</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
                 </Attribute>
                 <Attribute>
                   <AttributeID>HourInterval</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
                 </Attribute>
                 <Attribute>
                   <AttributeID>MinuteInterval</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
                 </Attribute>
               </Attributes>
+              <Hierarchies>
+                <Hierarchy>
+                  <HierarchyID>Time Intervals</HierarchyID>
+                </Hierarchy>
+              </Hierarchies>
+            </Dimension>
+            <Dimension>
+              <ID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</ID>
+              <Name>Dates</Name>
+              <DimensionID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</DimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>__XL_RowNumber</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>DateKey</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>CalendarYear</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>CalendarQuarter</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>CalendarMonth</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>CalendarDay</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>CalendarMonthName</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>CalendarDayName</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ISOWeek</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+              </Attributes>
+              <Hierarchies>
+                <Hierarchy>
+                  <HierarchyID>Date Intervals</HierarchyID>
+                </Hierarchy>
+              </Hierarchies>
+            </Dimension>
+            <Dimension>
+              <ID>ShipType_237284e5-7067-470e-ac3a-353253975aef</ID>
+              <Name>Ship Type</Name>
+              <DimensionID>ShipType_237284e5-7067-470e-ac3a-353253975aef</DimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>__XL_RowNumber</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ShipType</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ShipTypeDetail</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+              </Attributes>
+              <Hierarchies>
+                <Hierarchy>
+                  <HierarchyID>Ship Types</HierarchyID>
+                </Hierarchy>
+              </Hierarchies>
+            </Dimension>
+            <Dimension>
+              <ID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</ID>
+              <Name>Vessels</Name>
+              <DimensionID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</DimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>__XL_RowNumber</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>MMSI</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ShipType</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ShipTypeDetail</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>VesselDimension</AttributeID>
+                  <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+                </Attribute>
+              </Attributes>
+              <Hierarchies>
+                <Hierarchy>
+                  <HierarchyID>Vessel Types</HierarchyID>
+                </Hierarchy>
+              </Hierarchies>
             </Dimension>
           </Dimensions>
           <MeasureGroups>
             <MeasureGroup>
               <ID>TimeInterval_c4754db1-4bf4-4016-b762-7d582ce09521</ID>
-              <Name>TimeInterval</Name>
+              <Name>Times</Name>
               <Measures>
                 <Measure>
                   <ID>TimeInterval_c4754db1-4bf4-4016-b762-7d582ce09521</ID>
-                  <Name>__XL_Count TimeInterval</Name>
+                  <Name>__XL_Count Times</Name>
                   <AggregateFunction>Count</AggregateFunction>
                   <DataType>BigInt</DataType>
                   <Source>
@@ -436,6 +1551,534 @@
                 <Source xsi:type="ProactiveCachingInheritedBinding" />
               </ProactiveCaching>
             </MeasureGroup>
+            <MeasureGroup>
+              <ID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</ID>
+              <Name>Dates</Name>
+              <Measures>
+                <Measure>
+                  <ID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</ID>
+                  <Name>__XL_Count Dates</Name>
+                  <AggregateFunction>Count</AggregateFunction>
+                  <DataType>BigInt</DataType>
+                  <Source>
+                    <DataType>BigInt</DataType>
+                    <DataSize>8</DataSize>
+                    <Source xsi:type="RowBinding">
+                      <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                    </Source>
+                  </Source>
+                  <Visible>false</Visible>
+                </Measure>
+              </Measures>
+              <StorageMode valuens="ddl200_200">InMemory</StorageMode>
+              <ErrorConfiguration>
+                <KeyNotFound>IgnoreError</KeyNotFound>
+                <KeyDuplicate>ReportAndStop</KeyDuplicate>
+                <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+              </ErrorConfiguration>
+              <ProcessingMode>Regular</ProcessingMode>
+              <Dimensions>
+                <Dimension xsi:type="DegenerateMeasureGroupDimension">
+                  <CubeDimensionID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>__XL_RowNumber</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>Integer</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>DateInterval</TableID>
+                            <ColumnID>__XL_RowNumber</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Id</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>BigInt</DataType>
+                          <DataSize>-1</DataSize>
+                          <NullProcessing>Preserve</NullProcessing>
+                          <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                            <ColumnID>Id</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>DateKey</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>Date</DataType>
+                          <DataSize>-1</DataSize>
+                          <NullProcessing>Preserve</NullProcessing>
+                          <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                            <ColumnID>DateKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>CalendarYear</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>WChar</DataType>
+                          <DataSize>32766</DataSize>
+                          <NullProcessing>Preserve</NullProcessing>
+                          <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                            <ColumnID>CalendarYear</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>CalendarQuarter</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>WChar</DataType>
+                          <DataSize>32766</DataSize>
+                          <NullProcessing>Preserve</NullProcessing>
+                          <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                            <ColumnID>CalendarQuarter</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>CalendarMonth</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>WChar</DataType>
+                          <DataSize>32766</DataSize>
+                          <NullProcessing>Preserve</NullProcessing>
+                          <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                            <ColumnID>CalendarMonth</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>CalendarDay</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>WChar</DataType>
+                          <DataSize>32766</DataSize>
+                          <NullProcessing>Preserve</NullProcessing>
+                          <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                            <ColumnID>CalendarDay</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>CalendarMonthName</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>WChar</DataType>
+                          <DataSize>32766</DataSize>
+                          <NullProcessing>Preserve</NullProcessing>
+                          <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                            <ColumnID>CalendarMonthName</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>CalendarDayName</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>WChar</DataType>
+                          <DataSize>32766</DataSize>
+                          <NullProcessing>Preserve</NullProcessing>
+                          <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                            <ColumnID>CalendarDayName</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>ISOWeek</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>WChar</DataType>
+                          <DataSize>32766</DataSize>
+                          <NullProcessing>Preserve</NullProcessing>
+                          <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</TableID>
+                            <ColumnID>ISOWeek</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                    </Attribute>
+                  </Attributes>
+                  <ddl200_200:ShareDimensionStorage>Shared</ddl200_200:ShareDimensionStorage>
+                </Dimension>
+              </Dimensions>
+              <Partitions>
+                <Partition>
+                  <ID>DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f</ID>
+                  <Name>DateInterval</Name>
+                  <Annotations>
+                    <Annotation>
+                      <Name>IsQueryEditorUsed</Name>
+                      <Value>False</Value>
+                    </Annotation>
+                    <Annotation>
+                      <Name>QueryEditorSerialization</Name>
+                    </Annotation>
+                    <Annotation>
+                      <Name>TableWidgetSerialization</Name>
+                    </Annotation>
+                  </Annotations>
+                  <Source xsi:type="QueryBinding">
+                    <DataSourceID>f8e2c519-cce8-4f6a-b6d9-a8489377862a</DataSourceID>
+                    <QueryDefinition>SELECT [dim].[DateInterval].* 		FROM [dim].[DateInterval]</QueryDefinition>
+                  </Source>
+                  <StorageMode valuens="ddl200_200">InMemory</StorageMode>
+                  <ProcessingMode>Regular</ProcessingMode>
+                  <ErrorConfiguration>
+                    <KeyNotFound>IgnoreError</KeyNotFound>
+                    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+                    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+                  </ErrorConfiguration>
+                  <ProactiveCaching>
+                    <SilenceInterval>-PT1S</SilenceInterval>
+                    <Latency>-PT1S</Latency>
+                    <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                    <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                    <Source xsi:type="ProactiveCachingInheritedBinding" />
+                  </ProactiveCaching>
+                </Partition>
+              </Partitions>
+              <ProactiveCaching>
+                <SilenceInterval>-PT1S</SilenceInterval>
+                <Latency>-PT1S</Latency>
+                <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                <Source xsi:type="ProactiveCachingInheritedBinding" />
+              </ProactiveCaching>
+            </MeasureGroup>
+            <MeasureGroup>
+              <ID>ShipType_237284e5-7067-470e-ac3a-353253975aef</ID>
+              <Name>Ship Type</Name>
+              <Measures>
+                <Measure>
+                  <ID>ShipType_237284e5-7067-470e-ac3a-353253975aef</ID>
+                  <Name>__XL_Count Ship Type</Name>
+                  <AggregateFunction>Count</AggregateFunction>
+                  <DataType>BigInt</DataType>
+                  <Source>
+                    <DataType>BigInt</DataType>
+                    <DataSize>8</DataSize>
+                    <Source xsi:type="RowBinding">
+                      <TableID>ShipType_237284e5-7067-470e-ac3a-353253975aef</TableID>
+                    </Source>
+                  </Source>
+                  <Visible>false</Visible>
+                </Measure>
+              </Measures>
+              <StorageMode valuens="ddl200_200">InMemory</StorageMode>
+              <ErrorConfiguration>
+                <KeyNotFound>IgnoreError</KeyNotFound>
+                <KeyDuplicate>ReportAndStop</KeyDuplicate>
+                <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+              </ErrorConfiguration>
+              <ProcessingMode>Regular</ProcessingMode>
+              <Dimensions>
+                <Dimension xsi:type="DegenerateMeasureGroupDimension">
+                  <CubeDimensionID>ShipType_237284e5-7067-470e-ac3a-353253975aef</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>__XL_RowNumber</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>Integer</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>ShipType</TableID>
+                            <ColumnID>__XL_RowNumber</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Id</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>BigInt</DataType>
+                          <DataSize>-1</DataSize>
+                          <NullProcessing>Preserve</NullProcessing>
+                          <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>ShipType_237284e5-7067-470e-ac3a-353253975aef</TableID>
+                            <ColumnID>Id</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>ShipType</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>WChar</DataType>
+                          <DataSize>32766</DataSize>
+                          <NullProcessing>Preserve</NullProcessing>
+                          <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>ShipType_237284e5-7067-470e-ac3a-353253975aef</TableID>
+                            <ColumnID>ShipType</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>ShipTypeDetail</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>WChar</DataType>
+                          <DataSize>32766</DataSize>
+                          <NullProcessing>Preserve</NullProcessing>
+                          <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>ShipType_237284e5-7067-470e-ac3a-353253975aef</TableID>
+                            <ColumnID>ShipTypeDetail</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                    </Attribute>
+                  </Attributes>
+                  <ddl200_200:ShareDimensionStorage>Shared</ddl200_200:ShareDimensionStorage>
+                </Dimension>
+              </Dimensions>
+              <Partitions>
+                <Partition>
+                  <ID>ShipType_237284e5-7067-470e-ac3a-353253975aef</ID>
+                  <Name>ShipType</Name>
+                  <Annotations>
+                    <Annotation>
+                      <Name>IsQueryEditorUsed</Name>
+                      <Value>False</Value>
+                    </Annotation>
+                    <Annotation>
+                      <Name>QueryEditorSerialization</Name>
+                    </Annotation>
+                    <Annotation>
+                      <Name>TableWidgetSerialization</Name>
+                    </Annotation>
+                  </Annotations>
+                  <Source xsi:type="QueryBinding">
+                    <DataSourceID>f8e2c519-cce8-4f6a-b6d9-a8489377862a</DataSourceID>
+                    <QueryDefinition>SELECT [dim].[ShipType].* 		FROM [dim].[ShipType]</QueryDefinition>
+                  </Source>
+                  <StorageMode valuens="ddl200_200">InMemory</StorageMode>
+                  <ProcessingMode>Regular</ProcessingMode>
+                  <ErrorConfiguration>
+                    <KeyNotFound>IgnoreError</KeyNotFound>
+                    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+                    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+                  </ErrorConfiguration>
+                  <ProactiveCaching>
+                    <SilenceInterval>-PT1S</SilenceInterval>
+                    <Latency>-PT1S</Latency>
+                    <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                    <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                    <Source xsi:type="ProactiveCachingInheritedBinding" />
+                  </ProactiveCaching>
+                </Partition>
+              </Partitions>
+              <ProactiveCaching>
+                <SilenceInterval>-PT1S</SilenceInterval>
+                <Latency>-PT1S</Latency>
+                <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                <Source xsi:type="ProactiveCachingInheritedBinding" />
+              </ProactiveCaching>
+            </MeasureGroup>
+            <MeasureGroup>
+              <ID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</ID>
+              <Name>Vessels</Name>
+              <Measures>
+                <Measure>
+                  <ID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</ID>
+                  <Name>__XL_Count Vessels</Name>
+                  <AggregateFunction>Count</AggregateFunction>
+                  <DataType>BigInt</DataType>
+                  <Source>
+                    <DataType>BigInt</DataType>
+                    <DataSize>8</DataSize>
+                    <Source xsi:type="RowBinding">
+                      <TableID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</TableID>
+                    </Source>
+                  </Source>
+                  <Visible>false</Visible>
+                </Measure>
+              </Measures>
+              <StorageMode valuens="ddl200_200">InMemory</StorageMode>
+              <ErrorConfiguration>
+                <KeyNotFound>IgnoreError</KeyNotFound>
+                <KeyDuplicate>ReportAndStop</KeyDuplicate>
+                <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+              </ErrorConfiguration>
+              <ProcessingMode>Regular</ProcessingMode>
+              <Dimensions>
+                <Dimension xsi:type="DegenerateMeasureGroupDimension">
+                  <CubeDimensionID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>__XL_RowNumber</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>Integer</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>VesselView</TableID>
+                            <ColumnID>__XL_RowNumber</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Id</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>BigInt</DataType>
+                          <DataSize>-1</DataSize>
+                          <NullProcessing>Preserve</NullProcessing>
+                          <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</TableID>
+                            <ColumnID>Id</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>MMSI</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>WChar</DataType>
+                          <DataSize>32766</DataSize>
+                          <NullProcessing>Preserve</NullProcessing>
+                          <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</TableID>
+                            <ColumnID>MMSI</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>ShipType</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>WChar</DataType>
+                          <DataSize>32766</DataSize>
+                          <NullProcessing>Preserve</NullProcessing>
+                          <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</TableID>
+                            <ColumnID>ShipType</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>ShipTypeDetail</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>WChar</DataType>
+                          <DataSize>32766</DataSize>
+                          <NullProcessing>Preserve</NullProcessing>
+                          <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</TableID>
+                            <ColumnID>ShipTypeDetail</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>VesselDimension</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>WChar</DataType>
+                          <DataSize>32766</DataSize>
+                          <NullProcessing>Preserve</NullProcessing>
+                          <InvalidXmlCharacters>Remove</InvalidXmlCharacters>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</TableID>
+                            <ColumnID>VesselDimension</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                    </Attribute>
+                  </Attributes>
+                  <ddl200_200:ShareDimensionStorage>Shared</ddl200_200:ShareDimensionStorage>
+                </Dimension>
+              </Dimensions>
+              <Partitions>
+                <Partition>
+                  <ID>VesselView_b732c2bc-69da-4550-875a-42d1c7196b47</ID>
+                  <Name>VesselView</Name>
+                  <Annotations>
+                    <Annotation>
+                      <Name>IsQueryEditorUsed</Name>
+                      <Value>False</Value>
+                    </Annotation>
+                    <Annotation>
+                      <Name>QueryEditorSerialization</Name>
+                    </Annotation>
+                    <Annotation>
+                      <Name>TableWidgetSerialization</Name>
+                    </Annotation>
+                  </Annotations>
+                  <Source xsi:type="QueryBinding">
+                    <DataSourceID>f8e2c519-cce8-4f6a-b6d9-a8489377862a</DataSourceID>
+                    <QueryDefinition>SELECT [dim].[VesselView].* 		FROM [dim].[VesselView]</QueryDefinition>
+                  </Source>
+                  <StorageMode valuens="ddl200_200">InMemory</StorageMode>
+                  <ProcessingMode>Regular</ProcessingMode>
+                  <ErrorConfiguration>
+                    <KeyNotFound>IgnoreError</KeyNotFound>
+                    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+                    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+                  </ErrorConfiguration>
+                  <ProactiveCaching>
+                    <SilenceInterval>-PT1S</SilenceInterval>
+                    <Latency>-PT1S</Latency>
+                    <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                    <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                    <Source xsi:type="ProactiveCachingInheritedBinding" />
+                  </ProactiveCaching>
+                </Partition>
+              </Partitions>
+              <ProactiveCaching>
+                <SilenceInterval>-PT1S</SilenceInterval>
+                <Latency>-PT1S</Latency>
+                <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                <Source xsi:type="ProactiveCachingInheritedBinding" />
+              </ProactiveCaching>
+            </MeasureGroup>
           </MeasureGroups>
           <Source>
             <DataSourceViewID>Sandbox</DataSourceViewID>
@@ -491,7 +2134,7 @@ ALTER CUBE CURRENTCUBE UPDATE DIMENSION Measures, Default_Member = [__No measure
               <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:Locale="en-US">
                 <xs:complexType>
                   <xs:choice minOccurs="0" maxOccurs="unbounded">
-                    <xs:element name="TimeInterval_c4754db1-4bf4-4016-b762-7d582ce09521" msdata:Locale="" msprop:IsLogical="True" msprop:FriendlyName="TimeInterval" msprop:DbSchemaName="dim" msprop:DbTableName="TimeInterval" msprop:TableType="View" msprop:Description="TimeInterval" msprop:QueryDefinition="      SELECT [dim].[TimeInterval].*   FROM [dim].[TimeInterval] ">
+                    <xs:element name="TimeInterval_c4754db1-4bf4-4016-b762-7d582ce09521" msdata:Locale="" msprop:IsLogical="True" msprop:FriendlyName="Times" msprop:DbSchemaName="dim" msprop:DbTableName="TimeInterval" msprop:TableType="View" msprop:Description="TimeInterval" msprop:QueryDefinition="      SELECT [dim].[TimeInterval].*   FROM [dim].[TimeInterval] ">
                       <xs:complexType>
                         <xs:sequence>
                           <xs:element name="Id" msprop:DbColumnName="Id" msprop:FriendlyName="Id" type="xs:long" />
@@ -513,10 +2156,131 @@ ALTER CUBE CURRENTCUBE UPDATE DIMENSION Measures, Default_Member = [__No measure
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
+                    <xs:element name="DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f" msdata:Locale="" msprop:IsLogical="True" msprop:FriendlyName="Dates" msprop:DbSchemaName="dim" msprop:DbTableName="DateInterval" msprop:TableType="View" msprop:Description="DateInterval" msprop:QueryDefinition="      SELECT [dim].[DateInterval].*   FROM [dim].[DateInterval] ">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Id" msprop:DbColumnName="Id" msprop:FriendlyName="Id" type="xs:long" />
+                          <xs:element name="DateKey" msprop:DbColumnName="DateKey" msprop:FriendlyName="DateKey" type="xs:dateTime" minOccurs="0" />
+                          <xs:element name="CalendarYear" msprop:DbColumnName="CalendarYear" msprop:FriendlyName="CalendarYear" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="32766" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="CalendarQuarter" msprop:DbColumnName="CalendarQuarter" msprop:FriendlyName="CalendarQuarter" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="32766" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="CalendarMonth" msprop:DbColumnName="CalendarMonth" msprop:FriendlyName="CalendarMonth" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="32766" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="CalendarDay" msprop:DbColumnName="CalendarDay" msprop:FriendlyName="CalendarDay" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="32766" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="CalendarMonthName" msprop:DbColumnName="CalendarMonthName" msprop:FriendlyName="CalendarMonthName" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="32766" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="CalendarDayName" msprop:DbColumnName="CalendarDayName" msprop:FriendlyName="CalendarDayName" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="32766" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="ISOWeek" msprop:DbColumnName="ISOWeek" msprop:FriendlyName="ISOWeek" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="32766" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ShipType_237284e5-7067-470e-ac3a-353253975aef" msdata:Locale="" msprop:IsLogical="True" msprop:FriendlyName="Ship Type" msprop:DbSchemaName="dim" msprop:DbTableName="ShipType" msprop:TableType="View" msprop:Description="ShipType" msprop:QueryDefinition="      SELECT [dim].[ShipType].*   FROM [dim].[ShipType] ">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Id" msprop:DbColumnName="Id" msprop:FriendlyName="Id" type="xs:long" />
+                          <xs:element name="ShipType" msprop:DbColumnName="ShipType" msprop:FriendlyName="ShipType" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="32766" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="ShipTypeDetail" msprop:DbColumnName="ShipTypeDetail" msprop:FriendlyName="ShipTypeDetail" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="32766" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="VesselView_b732c2bc-69da-4550-875a-42d1c7196b47" msdata:Locale="" msprop:IsLogical="True" msprop:FriendlyName="Vessels" msprop:DbSchemaName="dim" msprop:DbTableName="VesselView" msprop:TableType="View" msprop:Description="VesselView" msprop:QueryDefinition="      SELECT [dim].[VesselView].*   FROM [dim].[VesselView] ">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Id" msprop:DbColumnName="Id" msprop:FriendlyName="Id" type="xs:long" minOccurs="0" />
+                          <xs:element name="MMSI" msprop:DbColumnName="MMSI" msprop:FriendlyName="MMSI" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="32766" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="ShipType" msprop:DbColumnName="ShipType" msprop:FriendlyName="ShipType" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="32766" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="ShipTypeDetail" msprop:DbColumnName="ShipTypeDetail" msprop:FriendlyName="ShipTypeDetail" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="32766" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="VesselDimension" msprop:DbColumnName="VesselDimension" msprop:FriendlyName="VesselDimension" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="32766" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
                   </xs:choice>
                 </xs:complexType>
                 <xs:unique name="Constraint1" msdata:PrimaryKey="true">
                   <xs:selector xpath=".//TimeInterval_c4754db1-4bf4-4016-b762-7d582ce09521" />
+                  <xs:field xpath="Id" />
+                </xs:unique>
+                <xs:unique name="DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                  <xs:selector xpath=".//DateInterval_ae9883b3-eb77-48af-8be0-3a11926dd09f" />
+                  <xs:field xpath="Id" />
+                </xs:unique>
+                <xs:unique name="ShipType_237284e5-7067-470e-ac3a-353253975aef_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                  <xs:selector xpath=".//ShipType_237284e5-7067-470e-ac3a-353253975aef" />
                   <xs:field xpath="Id" />
                 </xs:unique>
               </xs:element>

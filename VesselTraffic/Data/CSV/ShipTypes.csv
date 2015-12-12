@@ -1,0 +1,101 @@
+Id,ShipType,ShipTypeDetail
+0,Reserved,Reserved
+1,Reserved,Reserved
+2,Reserved,Reserved
+3,Reserved,Reserved
+4,Reserved,Reserved
+5,Reserved,Reserved
+6,Reserved,Reserved
+7,Reserved,Reserved
+8,Reserved,Reserved
+9,Reserved,Reserved
+10,Reserved,Reserved
+11,Reserved,Reserved
+12,Reserved,Reserved
+13,Reserved,Reserved
+14,Reserved,Reserved
+15,Reserved,Reserved
+16,Reserved,Reserved
+17,Reserved,Reserved
+18,Reserved,Reserved
+19,Reserved,Reserved
+20,Wing in ground (WIG),All ships of this type
+21,Wing in ground (WIG),Hazardous category A
+22,Wing in ground (WIG),Hazardous category B
+23,Wing in ground (WIG),Hazardous category C
+24,Wing in ground (WIG),Hazardous category D
+25,Wing in ground (WIG),Reserved for future use
+26,Wing in ground (WIG),Reserved for future use
+27,Wing in ground (WIG),Reserved for future use
+28,Wing in ground (WIG),Reserved for future use
+29,Wing in ground (WIG),No additional information
+30,Fishing,Fishing
+31,Tug,Towing
+32,Tug,Towing length exceeds 200m or breadth exceeds 25m
+33,Dredging or underwater ops,Dredging
+34,Diving ops,Diving ops
+35,Military ops,Military ops
+36,Sailing,Sailing
+37,Pleasure craft,Pleasure craft
+38,Reserved,Reserved
+39,Reserved,Reserved
+40,High speed craft (HSC),All ships of this type
+41,High speed craft (HSC),Hazardous category A
+42,High speed craft (HSC),Hazardous category B
+43,High speed craft (HSC),Hazardous category C
+44,High speed craft (HSC),Hazardous category D
+45,High speed craft (HSC),Reserved for future use
+46,High speed craft (HSC),Reserved for future use
+47,High speed craft (HSC),Reserved for future use
+48,High speed craft (HSC),Reserved for future use
+49,High speed craft (HSC),No additional information
+50,Pilot vessel,Pilot vessel
+51,Search and rescue vessel,Search and rescue vessel
+52,Tug,Tug
+53,Port Tender,Port Tender
+54,Anti-pollution equipment,Anti-pollution equipment
+55,Law enforcement,Law enforcement
+56,Spare - local vessel,Spare - local vessel
+57,Spare - local vessel,Spare - local vessel
+58,Medical transport,Medical transport
+59,Special Craft,Ship according to RR Resolution No. 18
+60,Passenger,all ships of this type
+61,Passenger,Hazardous category A
+62,Passenger,Hazardous category B
+63,Passenger,Hazardous category C
+64,Passenger,Hazardous category D
+65,Passenger,Reserved for future use
+66,Passenger,Reserved for future use
+67,Passenger,Reserved for future use
+68,Passenger,Reserved for future use
+69,Passenger,No additional information
+70,Cargo,all ships of this type
+71,Cargo,Hazardous category A
+72,Cargo,Hazardous category B
+73,Cargo,Hazardous category C
+74,Cargo,Hazardous category D
+75,Cargo,Reserved for future use
+76,Cargo,Reserved for future use
+77,Cargo,Reserved for future use
+78,Cargo,Reserved for future use
+79,Cargo,No additional information
+80,Tanker,all ships of this type
+81,Tanker,Hazardous category A
+82,Tanker,Hazardous category B
+83,Tanker,Hazardous category C
+84,Tanker,Hazardous category D
+85,Tanker,Reserved for future use
+86,Tanker,Reserved for future use
+87,Tanker,Reserved for future use
+88,Tanker,Reserved for future use
+89,Tanker,No additional information
+90,Other type,all ships of this type
+91,Other type,Hazardous category A
+92,Other type,Hazardous category B
+93,Other type,Hazardous category C
+94,Other type,Hazardous category D
+95,Other type,Reserved for future use
+96,Other type,Reserved for future use
+97,Other type,Reserved for future use
+98,Other type,Reserved for future use
+99,Other type,No additional information
